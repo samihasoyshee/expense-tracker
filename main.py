@@ -1,5 +1,5 @@
 from expenses import Expense
-from expense_manager import add_expense, view_expenses
+from expense_manager import add_expense, view_expenses,search_expense
 from datetime import datetime
 
 expenses = [ ]
@@ -35,10 +35,13 @@ while True:
         add_expense(expenses, expense)
         input("\nPress Enter to continue...")
         
-
-    
     elif choice == "2":
         view_expenses(expenses)
+        input("\nPress Enter to continue...")
+
+    elif choice == "3":
+        keyword = input("Enter a title to search: ")
+        search_expense(expenses, keyword)
         input("\nPress Enter to continue...")
         
 

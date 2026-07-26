@@ -9,4 +9,15 @@ def view_expenses(expenses):
             print()
     else:
         print("no expense data!")
-        
+
+def search_expense(expenses, keyword):
+    results= [
+        expense 
+        for expense in expenses
+        if keyword.lower() in expense.title.lower()
+    ]
+    if results:
+        for expense in results:
+            print(expense)
+    else:
+        print("No matching expenses found!")
