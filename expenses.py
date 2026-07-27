@@ -11,3 +11,10 @@ class Expense:
             f"Category  : {self.category}\n"
             f"Date      : {self.date}"
         )
+    def to_dict(self):
+        return {
+            "title" : self.title,
+            "amount": self.amount,
+            "category": self.category,
+            "date" : self.date
+        }

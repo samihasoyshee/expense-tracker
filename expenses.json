@@ -1,0 +1,20 @@
+[
+    {
+        "title": "kebab",
+        "amount": "7",
+        "category": "food",
+        "date": "27-07-2026"
+    },
+    {
+        "title": "noodles",
+        "amount": "7",
+        "category": "foo",
+        "date": "27-07-2026"
+    },
+    {
+        "title": "pencils",
+        "amount": "10",
+        "category": "stationary",
+        "date": "27-07-2026"
+    }
+]

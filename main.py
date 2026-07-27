@@ -1,8 +1,9 @@
 from expenses import Expense
 from expense_manager import add_expense, view_expenses,search_expense
 from datetime import datetime
+from file_handler import save_expenses,load_expenses
 
-expenses = [ ]
+expenses = load_expenses()
 
 
 def main():
@@ -16,8 +17,7 @@ def main():
     print("5. Sort Expenses")
     print("6. Edit Expense")
     print("7. Delete Expense")
-    print("8. Save")
-    print("9. Exit")
+    print("8. Exit")
 
 while True:
     main()
@@ -33,6 +33,7 @@ while True:
                           category,
                           date)
         add_expense(expenses, expense)
+        save_expenses(expenses)
         input("\nPress Enter to continue...")
         
     elif choice == "2":
