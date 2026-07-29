@@ -1,3 +1,5 @@
+from file_handler import save_expenses
+from expenses import Expense
 def add_expense(expenses, expense):
     expenses.append(expense)
     print("Expense added successfully!")
@@ -22,5 +24,18 @@ def search_expense(expenses, keyword):
     else:
         print("No matching expenses found!")
 
- 
+def delete_expense(expenses):
+    if not expenses:
+        print("No expense to delete!")
+        return
+    for index, expense in enumerate(expenses, start=1):
+        print(f"{index}. {expense.summary()}")
+    delete = int(input("Enter the number you want to remove: "))
+    if 0< delete <= len(expenses):
+        index = delete - 1
+        expenses.pop(index)
+        print("Expesne deleted successfully.")
+    else:
+        print("invalid choice")
+    save_expenses(expenses)
         

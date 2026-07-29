@@ -18,3 +18,5 @@ class Expense:
             "category": self.category,
             "date" : self.date
         }
+    def summary(self):
+        return f"{self.title} | £{self.amount} | {self.category} | {self.date}"
