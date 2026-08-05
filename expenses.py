@@ -1,7 +1,7 @@
 class Expense:
     def __init__(self, title, amount, category, date):
         self.title = title
-        self.amount = amount
+        self.amount = float(amount)
         self.category = category
         self.date = date
     def __str__(self):

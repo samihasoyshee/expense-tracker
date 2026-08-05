@@ -1,5 +1,5 @@
 from expenses import Expense
-from expense_manager import add_expense, view_expenses,search_expense,delete_expense
+from expense_manager import add_expense, view_expenses,search_expense,delete_expense, view_summary
 from datetime import datetime
 from file_handler import save_expenses,load_expenses
 
@@ -17,7 +17,8 @@ def main():
     print("5. Sort Expenses")
     print("6. Edit Expense")
     print("7. Delete Expense")
-    print("8. Exit")
+    print("8. View Summary")
+    print("9. Exit")
 
 while True:
     main()
@@ -44,8 +45,11 @@ while True:
         keyword = input("Enter a title to search: ")
         search_expense(expenses, keyword)
         input("\nPress Enter to continue...")
-    elif choice =="4":
+    elif choice =="7":
         delete_expense(expenses)
+        input("\nPress Enter to continue...")
+    elif choice == "8":
+        view_summary(expenses)
         input("\nPress Enter to continue...")
         
 

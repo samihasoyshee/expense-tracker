@@ -38,4 +38,22 @@ def delete_expense(expenses):
     else:
         print("invalid choice")
     save_expenses(expenses)
+
+def view_summary(expenses):
+    total = 0
+    category_totals = {}
+    for expense in expenses:
+        total += expense.amount    
         
+        category = expense.category
+        if category in category_totals:
+            category_totals[category] += expense.amount
+        else:
+            category_totals[category] = expense.amount
+
+    print(f"Total Expense: {total}")
+
+    print("\nExpenses by Category")
+    for category, amount in category_totals.items():
+        print(f"{category}: {amount}")
+
