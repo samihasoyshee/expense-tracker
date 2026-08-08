@@ -10,7 +10,10 @@ def save_expenses(expenses):
 def load_expenses():
     expenses = []
     with open("expenses.json","r") as file:
-        expense_data = json.load(file)
+        content = file.read().strip()
+        if not content:
+            return []
+        expense_data = json.loads(content)
         for data in expense_data:
             expense = Expense(
                 data["title"],

@@ -1,6 +1,12 @@
 from expenses import Expense
-from expense_manager import add_expense, view_expenses,search_expense,delete_expense, view_summary,edit_expense
-from datetime import datetime
+from expense_manager import (add_expense,
+                            view_expenses,
+                            search_expense,
+                            delete_expense,
+                            view_summary,
+                            edit_expense,
+                            statistic,
+                            sort_expenses)
 from file_handler import save_expenses,load_expenses
 
 expenses = load_expenses()
@@ -24,16 +30,8 @@ while True:
     main()
     choice = input("\nChoose an option: ")
     if choice == "1":
-        title = input("Which item did you buy?:")
-        amount = input("How much did it cost?: ")
-        category = input("What category it belongs to?: ")
-        date = datetime.now().strftime("%d-%m-%Y")
-
-        expense = Expense(title,
-                          amount,
-                          category,
-                          date)
-        add_expense(expenses, expense)
+       
+        add_expense(expenses)
         save_expenses(expenses)
         input("\nPress Enter to continue...")
         
@@ -44,6 +42,12 @@ while True:
     elif choice == "3":
         keyword = input("Enter a title to search: ")
         search_expense(expenses, keyword)
+        input("\nPress Enter to continue...")
+    elif choice == "4":
+        statistic(expenses)
+        input("\nPress Enter to continue...")
+    elif choice == "5":
+        sort_expenses(expenses)
         input("\nPress Enter to continue...")
     elif choice == "6":
         edit_expense(expenses)
